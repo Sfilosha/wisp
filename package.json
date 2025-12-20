@@ -3,10 +3,6 @@
   "private": true,
   "version": "1.0.0",
   "description": "Component and Tokens generator from Figma to React",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "dev:plugin": "cd apps/plugin && npm run watch",
     "dev:server": "cd apps/server && npm run dev",
