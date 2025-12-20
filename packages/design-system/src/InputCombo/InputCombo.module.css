@@ -1,0 +1,73 @@
+.inputcombo { 
+  border: none; 
+  text-decoration: none;
+  box-sizing: border-box;
+  background: none;
+  padding: 0;
+  margin: 0;
+  }
+
+
+.inputcombo { padding: 8px 12px; border-radius: 8px; width: 100%; font-family: var(--font-primary); }
+
+.inputcombo.default {
+  display: flex;
+  flex-direction: column;
+  justify-content: min;
+  align-items: min;
+  gap: 6px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.inputcombo.default .field {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: min;
+  gap: 8px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.inputcombo.default .text-subtext {
+  color: var(--text-primary-Medium);
+  font-family: var(--text-subheadline-primary-rg-font-family);
+  font-weight: var(--text-subheadline-primary-rg-font-weight);
+  font-size: var(--text-subheadline-primary-rg-font-size);
+  line-height: var(--text-subheadline-primary-rg-line-height);
+}
+
+
+.inputcombo.default:disabled {
+  display: flex;
+  flex-direction: column;
+  justify-content: min;
+  align-items: min;
+  gap: 6px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.inputcombo.default:disabled .field {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: min;
+  gap: 8px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.inputcombo.default:disabled .text-subtext {
+  color: var(--text-neutral-xLow);
+  font-family: var(--text-subheadline-primary-rg-font-family);
+  font-weight: var(--text-subheadline-primary-rg-font-weight);
+  font-size: var(--text-subheadline-primary-rg-font-size);
+  line-height: var(--text-subheadline-primary-rg-line-height);
+}
+

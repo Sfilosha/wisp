@@ -1,0 +1,25 @@
+{
+  "name": "wisp",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Component and Tokens generator from Figma to React",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:plugin": "cd apps/plugin && npm run watch",
+    "dev:server": "cd apps/server && npm run dev",
+    "build:ds": "cd packages/design-system && npm run build",
+    "build:tokens": "cd packages/tokens && npm run build",
+    "storybook": "cd packages/design-system && npm run storybook",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "launch": "npm run dev:plugin & npm run dev:server & npm run storybook"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "typescript": "^5.3.3"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "componentName": "Textarea",
+  "props": [],
+  "variantStyles": {
+    "": {
+      "base": {
+        "backgroundColor": "var(--fill-neutral-xLow)",
+        "border": "1px solid var(--border-neutral-Medium)",
+        "borderRadius": "6px",
+        "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+        "display": "flex",
+        "flexDirection": "column",
+        "justifyContent": "min",
+        "alignItems": "min",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Placeholder",
+            "defaultValue": "Placeholder",
+            "styles": {
+              "color": "var(--text-neutral-Low)",
+              "fontFamily": "var(--text-body-primary-rg-font-family)",
+              "fontWeight": "var(--text-body-primary-rg-font-weight)",
+              "fontSize": "var(--text-body-primary-rg-font-size)",
+              "lineHeight": "var(--text-body-primary-rg-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "focus": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--border-neutral-Medium)",
+          "borderRadius": "6px",
+          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "min",
+          "alignItems": "min",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Placeholder",
+              "defaultValue": "Placeholder",
+              "styles": {
+                "color": "var(--text-neutral-Low)",
+                "fontFamily": "var(--text-body-primary-rg-font-family)",
+                "fontWeight": "var(--text-body-primary-rg-font-weight)",
+                "fontSize": "var(--text-body-primary-rg-font-size)",
+                "lineHeight": "var(--text-body-primary-rg-line-height)"
+              }
+            }
+          ]
+        },
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "border": "1px solid var(--border-neutral-Medium)",
+          "borderRadius": "6px",
+          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "min",
+          "alignItems": "min",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Placeholder",
+              "defaultValue": "Placeholder",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-rg-font-family)",
+                "fontWeight": "var(--text-body-primary-rg-font-weight)",
+                "fontSize": "var(--text-body-primary-rg-font-size)",
+                "lineHeight": "var(--text-body-primary-rg-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--border-neutral-High)",
+          "borderRadius": "6px",
+          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "column",
+          "justifyContent": "min",
+          "alignItems": "min",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Value",
+              "styles": {
+                "color": "var(--text-neutral-High)",
+                "fontFamily": "var(--text-body-primary-rg-font-family)",
+                "fontWeight": "var(--text-body-primary-rg-font-weight)",
+                "fontSize": "var(--text-body-primary-rg-font-size)",
+                "lineHeight": "var(--text-body-primary-rg-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    }
+  },
+  "allTextPropNames": [
+    "Placeholder",
+    "Value"
+  ],
+  "allBooleanPropNames": []
+}

@@ -1,0 +1,29 @@
+componentPropertyDefinitions: 
+          {
+  "Show text#87:0": {
+    "type": "BOOLEAN",
+    "defaultValue": true
+  },
+  "ic_left#158938:0": {
+    "type": "BOOLEAN",
+    "defaultValue": true
+  },
+  "Value#158997:0": {
+    "type": "TEXT",
+    "defaultValue": "Button"
+  },
+  "state": {
+    "type": "VARIANT",
+    "defaultValue": "default",
+    "variantOptions": [
+      "disabled",
+      "hover",
+      "default"
+    ]
+  }
+}
+
+          --------------------------
+
+          componentPropertyReferences:
+          undefined

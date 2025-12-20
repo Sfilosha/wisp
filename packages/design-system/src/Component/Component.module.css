@@ -1,0 +1,67 @@
+.component { 
+  border: none; 
+  text-decoration: none;
+  box-sizing: border-box;
+  background: none;
+  padding: 0;
+  margin: 0;
+  }
+
+
+.component {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: min;
+  gap: 12px;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.component .circle {
+  width: 44px;
+  height: 44px;
+  background-color: var(--color-primary-200);
+  border-radius: 50%;
+}
+
+
+.component .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: min;
+  align-items: center;
+  padding: 0px;
+  background-color: transparent;
+}
+
+
+.component .text-hello {
+  color: #0238aa;
+  font-family: var(--text-body-primary-emp-font-family);
+  font-weight: var(--text-body-primary-emp-font-weight);
+  font-size: var(--text-body-primary-emp-font-size);
+  line-height: var(--text-body-primary-emp-line-height);
+}
+
+
+.component .text-title {
+  color: #6c6c6c;
+  font-family: var(--text-subheadline-primary-rg-font-family);
+  font-weight: var(--text-subheadline-primary-rg-font-weight);
+  font-size: var(--text-subheadline-primary-rg-font-size);
+  line-height: var(--text-subheadline-primary-rg-line-height);
+}
+
+
+.component:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: min;
+  gap: 12px;
+  padding: 0px;
+  background-color: transparent;
+}
+

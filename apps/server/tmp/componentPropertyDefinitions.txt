@@ -1,0 +1,4 @@
+Binding boolean props for component: undefined
+ {
+  "visible": "Show text#87:0"
+}
