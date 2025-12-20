@@ -13,9 +13,22 @@
     "format": "prettier --write .",
     "launch": "npm run dev:plugin & npm run dev:server & npm run storybook"
   },
+  "dependencies": {
+    "axios": "^1.12.2",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "https": "^1.0.0",
+    "nanoid": "^5.1.6"
+  },
   "devDependencies": {
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5",
-    "typescript": "^5.3.3"
+    "@storybook/react-vite": "^9.1.13",
+    "@storybook/addon-a11y": "^9.1.13",
+    "@storybook/addon-docs": "^9.1.13",
+    "@chromatic-com/storybook": "^4.1.1",
+    "typescript": "^5.3.2",
+    "vite": "^6.0.0",
+    "rollup": "^4.9.6"
   }
 }

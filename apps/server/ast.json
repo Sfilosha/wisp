@@ -1,101 +1,114 @@
 {
-  "componentName": "Textarea",
+  "componentName": "ButtonTest",
   "props": [],
   "variantStyles": {
     "": {
       "base": {
-        "backgroundColor": "var(--fill-neutral-xLow)",
-        "border": "1px solid var(--border-neutral-Medium)",
-        "borderRadius": "6px",
-        "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+        "backgroundColor": "var(--fill-primary-xHight)",
+        "border": "1px solid var(--color-primary-900)",
+        "borderRadius": "16px",
+        "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
         "display": "flex",
-        "flexDirection": "column",
-        "justifyContent": "min",
-        "alignItems": "min",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
         "layers": [
           {
             "type": "TEXT",
-            "propName": "Placeholder",
-            "defaultValue": "Placeholder",
+            "propName": "Value",
+            "defaultValue": "Button",
             "styles": {
-              "color": "var(--text-neutral-Low)",
-              "fontFamily": "var(--text-body-primary-rg-font-family)",
-              "fontWeight": "var(--text-body-primary-rg-font-weight)",
-              "fontSize": "var(--text-body-primary-rg-font-size)",
-              "lineHeight": "var(--text-body-primary-rg-line-height)"
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          },
+          {
+            "type": "TEXT",
+            "propName": "Hi",
+            "defaultValue": "Hi",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
             }
           }
         ]
       },
       "pseudo": {
-        "focus": {
-          "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--border-neutral-Medium)",
-          "borderRadius": "6px",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
-          "display": "flex",
-          "flexDirection": "column",
-          "justifyContent": "min",
-          "alignItems": "min",
-          "layers": [
-            {
-              "type": "TEXT",
-              "propName": "Placeholder",
-              "defaultValue": "Placeholder",
-              "styles": {
-                "color": "var(--text-neutral-Low)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
-              }
-            }
-          ]
-        },
         "disabled": {
           "backgroundColor": "var(--fill-neutral-Low)",
-          "border": "1px solid var(--border-neutral-Medium)",
-          "borderRadius": "6px",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
           "display": "flex",
-          "flexDirection": "column",
-          "justifyContent": "min",
-          "alignItems": "min",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
           "layers": [
             {
               "type": "TEXT",
-              "propName": "Placeholder",
-              "defaultValue": "Placeholder",
+              "propName": "Value",
+              "defaultValue": "Button",
               "styles": {
                 "color": "var(--text-neutral-xLow)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            },
+            {
+              "type": "TEXT",
+              "propName": "Hi",
+              "defaultValue": "Hi",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
               }
             }
           ]
         },
         "hover": {
-          "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--border-neutral-High)",
-          "borderRadius": "6px",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "backgroundColor": "var(--fill-primary-Hight)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
           "display": "flex",
-          "flexDirection": "column",
-          "justifyContent": "min",
-          "alignItems": "min",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
           "layers": [
             {
               "type": "TEXT",
               "propName": "Value",
-              "defaultValue": "Value",
+              "defaultValue": "Button",
               "styles": {
-                "color": "var(--text-neutral-High)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            },
+            {
+              "type": "TEXT",
+              "propName": "Hi",
+              "defaultValue": "Hi",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
               }
             }
           ]
@@ -104,8 +117,8 @@
     }
   },
   "allTextPropNames": [
-    "Placeholder",
-    "Value"
+    "Value",
+    "Hi"
   ],
   "allBooleanPropNames": []
 }
