@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button } from "../packages/design-system/src/button/Button.tsx";
+import { Button } from "../packages/design-system/src/Button/Button.tsx";
 import { Input } from "../packages/design-system/src/Input/Input.tsx";
 import { Textarea } from "../packages/design-system/src/Textarea/Textarea.tsx";
 import "./App.css";
