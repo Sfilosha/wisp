@@ -1,6 +1,6 @@
 // THIS FILE IS GENERATED ONCE AND CAN BE EDITED MANUALLY
 
-import React, { Children, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import { nanoid } from 'nanoid';
 import { useButtonStyles, IButtonStyleProps } from './useButtonStyles';
 import styles from './Button.module.css';
@@ -19,7 +19,7 @@ export const Button = (props: IButtonProps) => {
 
   const id = useMemo(() => props.id || nanoid(), [props.id]);
 
-  // 👇 YOU CAN WRITE YOUR LOGIC HERE 👇
+  // WRITE YOUR LOGIC BELOW
   
   return (
     <button className={className} onClick={onClick}>

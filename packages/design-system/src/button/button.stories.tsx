@@ -12,7 +12,8 @@ const meta: Meta<typeof Button> = {
     style: { control: 'select', options: ['Link', 'Tertiary', 'Secondary', 'Primary', 'Error'] },
     size: { control: 'select', options: ['small', 'large', 'medium'] },
     value: { control: 'text' },
-  
+
+
   },
 };
 

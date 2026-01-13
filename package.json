@@ -7,7 +7,15 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "storybook": "cd packages/design-system && npm run storybook",
+    "dev:server": "cd apps/server && node ./server.js",
+    "dev:plugin": "cd apps/plugin && npm run watch",
+    "project": "npm run dev:plugin & npm run dev:server & npm run storybook"
+  },
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "dependencies": {
     "react": "^19.2.0",
