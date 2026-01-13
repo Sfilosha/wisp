@@ -3,7 +3,7 @@
 import React, { useMemo } from "react";
 import { nanoid } from "nanoid";
 import { useButtonStyles, IButtonStyleProps } from "./useButtonStyles";
-import styles from "./button.module.css";
+import styles from "./Button.module.css";
 
 // Extend style props with custom logic props
 export interface IButtonProps extends IButtonStyleProps {
