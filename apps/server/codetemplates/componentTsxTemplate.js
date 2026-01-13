@@ -1,5 +1,10 @@
-export function componentTsxTemplate({componentName, componentTag, componentAttributes, componentChildren}) {
-    return `// THIS FILE IS GENERATED ONCE AND CAN BE EDITED MANUALLY
+export function componentTsxTemplate({
+  componentName,
+  componentTag,
+  componentAttributes,
+  componentChildren,
+}) {
+  return `// THIS FILE IS GENERATED ONCE AND CAN BE EDITED MANUALLY
 
 import React, { useMemo } from 'react';
 import { nanoid } from 'nanoid';
@@ -23,7 +28,8 @@ export const ${componentName} = (props: I${componentName}Props) => {
   // WRITE YOUR LOGIC BELOW
   
   return (
-    <${componentTag} className={className}${componentAttributes}>${componentChildren}</${componentTag}>
+    <${componentTag} className={className} ${componentAttributes}>${componentChildren}</${componentTag}>
   );
 };
-`};
+`;
+}

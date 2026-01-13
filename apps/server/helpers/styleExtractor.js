@@ -1,4 +1,4 @@
-import { rgbaToHex } from './utils.js';
+import { rgbaToHex } from "./utils.js";
 
 export class StyleExtractor {
   constructor(colorTokenMap, variablesMap) {
@@ -22,19 +22,40 @@ export class StyleExtractor {
   // For TextNodes
   extractTextStyles(node) {
     const styles = {};
-    
+
     const textFill = node.fills?.[0];
-    if (textFill?.type === 'SOLID') {
-       styles.color = this._getColorValue(textFill, textFill.boundVariables?.color);
+    if (textFill?.type === "SOLID") {
+      styles.color = this._getColorValue(
+        textFill,
+        textFill.boundVariables?.color
+      );
     } else {
-       styles.color = 'transparent';
+      styles.color = "transparent";
     }
 
     if (node.fontName) {
-      styles.fontFamily = this._verifyVariableBinding(node, 'fontFamily', node.fontName.family);
-      styles.fontWeight = this._verifyVariableBinding(node, 'fontWeight', node.fontWeight);
-      styles.fontSize = this._verifyVariableBinding(node, 'fontSize', node.fontSize, 'px');
-      styles.lineHeight = this._verifyVariableBinding(node, 'lineHeight', node.lineHeight?.value || 'auto', 'px');
+      styles.fontFamily = this._verifyVariableBinding(
+        node,
+        "fontFamily",
+        node.fontName.family
+      );
+      styles.fontWeight = this._verifyVariableBinding(
+        node,
+        "fontWeight",
+        node.fontWeight
+      );
+      styles.fontSize = this._verifyVariableBinding(
+        node,
+        "fontSize",
+        node.fontSize,
+        "px"
+      );
+      styles.lineHeight = this._verifyVariableBinding(
+        node,
+        "lineHeight",
+        node.lineHeight?.value || "auto",
+        "px"
+      );
     }
 
     return styles;
@@ -46,22 +67,21 @@ export class StyleExtractor {
 
     Object.assign(styles, this._getBackgroundColor(node));
     Object.assign(styles, this._getBorder(node));
-    
+
     if (node.width) styles.width = `${node.width}px`;
     if (node.height) styles.height = `${node.height}px`;
 
     // Shape specific stylization
-    if (node.type === 'ELLIPSE') {
-      styles.borderRadius = '50%';
-    } else if (node.type === 'RECTANGLE') {
+    if (node.type === "ELLIPSE") {
+      styles.borderRadius = "50%";
+    } else if (node.type === "RECTANGLE") {
       // For rectangles with border radius
       Object.assign(styles, this._getBorderRadius(node));
     }
-
     return styles;
   }
 
-  _verifyVariableBinding(node, propName, fallbackValue, unit = '') {
+  _verifyVariableBinding(node, propName, fallbackValue, unit = "") {
     const varAlias = node.boundVariables?.[propName];
     const varId = Array.isArray(varAlias) ? varAlias[0]?.id : varAlias?.id;
 
@@ -72,34 +92,41 @@ export class StyleExtractor {
   }
 
   _getColorValue(paintObj, boundVar) {
-     const hexColor = rgbaToHex(paintObj.color).toLowerCase();
-     const variableID = boundVar?.id;
-     
-     if (variableID) {
-        const token = this.variablesMap.get(variableID);
+    const hexColor = rgbaToHex(paintObj.color).toLowerCase();
+    const variableID = boundVar?.id;
 
-        if (this.colorTokenMap.has(token)) {
-            return `var(${token})`;
-        }
-     }
-     
-     return hexColor;
-     
+    if (variableID) {
+      const token = this.variablesMap.get(variableID);
+
+      if (this.colorTokenMap.has(token)) {
+        return `var(${token})`;
+      }
+    }
+
+    return hexColor;
   }
 
   _getBackgroundColor(node) {
     const fill = node.fills?.[0];
-    if (fill?.type === 'SOLID') {
-      return { backgroundColor: this._getColorValue(fill, node.fills[0]?.boundVariables?.color) };
+    if (fill?.type === "SOLID") {
+      return {
+        backgroundColor: this._getColorValue(
+          fill,
+          node.fills[0]?.boundVariables?.color
+        ),
+      };
     }
-    return { backgroundColor: 'transparent' };
+    return { backgroundColor: "transparent" };
   }
 
   _getBorder(node) {
     const stroke = node.strokes?.[0];
-    if (stroke?.type === 'SOLID') {
-      const borderColor = this._getColorValue(stroke, node.strokes[0]?.boundVariables?.color);
-      const borderWidth = node.strokeWeight ? `${node.strokeWeight}px` : '1px';
+    if (stroke?.type === "SOLID") {
+      const borderColor = this._getColorValue(
+        stroke,
+        node.strokes[0]?.boundVariables?.color
+      );
+      const borderWidth = node.strokeWeight ? `${node.strokeWeight}px` : "1px";
       return { border: `${borderWidth} solid ${borderColor}` };
     }
     return {};
@@ -117,10 +144,30 @@ export class StyleExtractor {
       br = `${bottomRight}px`;
       bl = `${bottomLeft}px`;
     } else {
-      tl = this._verifyVariableBinding(node, 'topLeftRadius', node.cornerRadius, 'px');
-      tr = this._verifyVariableBinding(node, 'topRightRadius', node.cornerRadius, 'px');
-      br = this._verifyVariableBinding(node, 'bottomRightRadius', node.cornerRadius, 'px');
-      bl = this._verifyVariableBinding(node, 'bottomLeftRadius', node.cornerRadius, 'px');
+      tl = this._verifyVariableBinding(
+        node,
+        "topLeftRadius",
+        node.cornerRadius,
+        "px"
+      );
+      tr = this._verifyVariableBinding(
+        node,
+        "topRightRadius",
+        node.cornerRadius,
+        "px"
+      );
+      br = this._verifyVariableBinding(
+        node,
+        "bottomRightRadius",
+        node.cornerRadius,
+        "px"
+      );
+      bl = this._verifyVariableBinding(
+        node,
+        "bottomLeftRadius",
+        node.cornerRadius,
+        "px"
+      );
     }
 
     if (tl === tr && tr === br && br === bl) return { borderRadius: tl };
@@ -130,11 +177,31 @@ export class StyleExtractor {
 
   _getPadding(node) {
     if (node.paddingLeft === undefined) return {};
-    
-    const top = this._verifyVariableBinding(node, 'paddingTop', node.paddingTop, 'px');
-    const right = this._verifyVariableBinding(node, 'paddingRight', node.paddingRight, 'px');
-    const bottom = this._verifyVariableBinding(node, 'paddingBottom', node.paddingBottom, 'px');
-    const left = this._verifyVariableBinding(node, 'paddingLeft', node.paddingLeft, 'px');
+
+    const top = this._verifyVariableBinding(
+      node,
+      "paddingTop",
+      node.paddingTop,
+      "px"
+    );
+    const right = this._verifyVariableBinding(
+      node,
+      "paddingRight",
+      node.paddingRight,
+      "px"
+    );
+    const bottom = this._verifyVariableBinding(
+      node,
+      "paddingBottom",
+      node.paddingBottom,
+      "px"
+    );
+    const left = this._verifyVariableBinding(
+      node,
+      "paddingLeft",
+      node.paddingLeft,
+      "px"
+    );
 
     if (top === bottom && left === right) {
       return { padding: top === left ? top : `${top} ${left}` };
@@ -143,14 +210,26 @@ export class StyleExtractor {
   }
 
   _getLayout(node) {
-    if (!node.layoutMode || node.layoutMode === 'NONE') return {};
+    if (!node.layoutMode || node.layoutMode === "NONE") return {};
 
-    const styles = { display: 'flex' };
+    const styles = { display: "flex" };
 
-    if (node.layoutMode === 'HORIZONTAL') styles.flexDirection = 'row';
-    if (node.layoutMode === 'VERTICAL') styles.flexDirection = 'column';
-    if (node.primaryAxisAlignItems) styles.justifyContent = node.primaryAxisAlignItems.toLowerCase().replace(/_/g, '-');
-    if (node.counterAxisAlignItems) styles.alignItems = node.counterAxisAlignItems.toLowerCase().replace(/_/g, '-');
+    if (node.layoutMode === "HORIZONTAL") styles.flexDirection = "row";
+    if (node.layoutMode === "VERTICAL") styles.flexDirection = "column";
+
+    if (node.minWidth) styles.minWidth = `${node.minWidth}px`;
+    if (node.minHeight) styles.minHeight = `${node.minHeight}px`;
+    if (node.maxWidth) styles.maxWidth = `${node.maxWidth}px`;
+    if (node.maxHeight) styles.maxHeight = `${node.maxHeight}px`;
+
+    if (node.primaryAxisAlignItems)
+      styles.justifyContent = node.primaryAxisAlignItems
+        .toLowerCase()
+        .replace(/_/g, "-");
+    if (node.counterAxisAlignItems)
+      styles.alignItems = node.counterAxisAlignItems
+        .toLowerCase()
+        .replace(/_/g, "-");
 
     const itemSpacingBinding = node.boundVariables?.itemSpacing;
     if (itemSpacingBinding && this.variablesMap.has(itemSpacingBinding.id)) {
@@ -158,7 +237,7 @@ export class StyleExtractor {
     } else if (node.itemSpacing) {
       styles.gap = `${node.itemSpacing}px`;
     }
-    
+
     return styles;
   }
 }

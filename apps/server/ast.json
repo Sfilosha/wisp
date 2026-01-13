@@ -1,115 +1,88 @@
 {
-  "componentName": "Input",
-  "props": [],
+  "componentName": "Checkbox",
+  "props": [
+    {
+      "name": "checked",
+      "values": [
+        "True",
+        "False"
+      ]
+    }
+  ],
   "variantStyles": {
-    "": {
+    "checked=True": {
       "base": {
-        "backgroundColor": "var(--fill-neutral-xLow)",
-        "border": "1px solid var(--border-neutral-Medium)",
-        "borderRadius": "var(--border-radius-Small)",
-        "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+        "backgroundColor": "var(--fill-primary-Hight)",
+        "border": "1px solid var(--fill-primary-Hight)",
+        "borderRadius": "var(--border-radius-xSmall)",
+        "padding": "0px",
         "display": "flex",
         "flexDirection": "row",
-        "justifyContent": "min",
+        "minWidth": "20px",
+        "minHeight": "20px",
+        "maxWidth": "20px",
+        "maxHeight": "20px",
+        "justifyContent": "center",
         "alignItems": "center",
-        "gap": "12px",
-        "layers": [
-          {
-            "type": "TEXT",
-            "propName": "value",
-            "defaultValue": "Value",
-            "styles": {
-              "color": "var(--text-neutral-High)",
-              "fontFamily": "var(--text-body-primary-rg-font-family)",
-              "fontWeight": "var(--text-body-primary-rg-font-weight)",
-              "fontSize": "var(--text-body-primary-rg-font-size)",
-              "lineHeight": "var(--text-body-primary-rg-line-height)"
-            }
-          }
-        ]
+        "gap": "8px",
+        "layers": []
       },
       "pseudo": {
-        "hover": {
-          "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--border-neutral-High)",
-          "borderRadius": "var(--border-radius-Small)",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "min",
-          "alignItems": "center",
-          "gap": "12px",
-          "layers": [
-            {
-              "type": "TEXT",
-              "propName": "Placeholder",
-              "defaultValue": "Placeholder",
-              "styles": {
-                "color": "var(--text-inverted-Low)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
-              }
-            }
-          ]
-        },
-        "focus": {
-          "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--fill-primary-Hight)",
-          "borderRadius": "var(--border-radius-Small)",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
-          "display": "flex",
-          "flexDirection": "row",
-          "justifyContent": "min",
-          "alignItems": "center",
-          "gap": "12px",
-          "layers": [
-            {
-              "type": "TEXT",
-              "propName": "value",
-              "defaultValue": "|",
-              "styles": {
-                "color": "var(--text-neutral-High)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
-              }
-            }
-          ]
-        },
         "disabled": {
-          "backgroundColor": "var(--fill-neutral-Low)",
-          "border": "1px solid var(--border-neutral-Medium)",
-          "borderRadius": "var(--border-radius-Small)",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "backgroundColor": "var(--fill-neutral-High)",
+          "border": "1px solid var(--fill-neutral-High)",
+          "borderRadius": "var(--border-radius-xSmall)",
+          "padding": "0px",
           "display": "flex",
           "flexDirection": "row",
+          "minWidth": "20px",
+          "minHeight": "20px",
+          "maxWidth": "20px",
+          "maxHeight": "20px",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "8px",
+          "layers": []
+        }
+      }
+    },
+    "checked=False": {
+      "base": {
+        "backgroundColor": "var(--fill-neutral-xLow)",
+        "border": "1px solid var(--fill-primary-Hight)",
+        "borderRadius": "var(--border-radius-xSmall)",
+        "padding": "0px",
+        "display": "flex",
+        "flexDirection": "row",
+        "minWidth": "20px",
+        "minHeight": "20px",
+        "maxWidth": "20px",
+        "maxHeight": "20px",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "8px",
+        "layers": []
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--fill-neutral-High)",
+          "borderRadius": "var(--border-radius-xSmall)",
+          "padding": "0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "minWidth": "20px",
+          "minHeight": "20px",
+          "maxWidth": "20px",
+          "maxHeight": "20px",
           "justifyContent": "min",
           "alignItems": "center",
-          "gap": "12px",
-          "layers": [
-            {
-              "type": "TEXT",
-              "propName": "Placeholder",
-              "defaultValue": "Placeholder",
-              "styles": {
-                "color": "var(--text-inverted-Low)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
-              }
-            }
-          ]
+          "gap": "8px",
+          "layers": []
         }
       }
     }
   },
-  "allTextPropNames": [
-    "Placeholder",
-    "value"
-  ],
+  "allTextPropNames": [],
   "allBooleanPropNames": []
 }

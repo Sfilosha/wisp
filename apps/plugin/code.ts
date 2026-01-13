@@ -47,7 +47,7 @@ async function getAllTokens() {
   // FLOAT
   for (const v of await figma.variables.getLocalVariablesAsync("FLOAT")) {
     const key = `--${normalizeName(v.name)}`;
-    console.log(key)
+    console.log(key);
     ids[v.id] = key;
     const value = Object.values(v.valuesByMode)[0] as number;
     if (typeof value === "number") {
@@ -145,87 +145,93 @@ async function getAllTokens() {
 function serializeFigmaNode(node: SceneNode): any {
   // Properties to extract from each node
   const propertiesToExtract = [
-    'id',
-    'name',
-    'type',
-    'visible',
-    'opacity',
-    'blendMode',
-    'layoutVersion',
-    'children',
-    'x',
-    'y',
-    'width',
-    'height',
-    'rotation',
-    'constraints',
-    'absoluteBoundingBox',
-    'absoluteRenderBounds',
-    'fills',
-    'strokes',
-    'strokeWeight',
-    'strokeAlign',
-    'effects',
-    'cornerRadius',
-    'layoutMode',
-    'primaryAxisSizingMode',
-    'counterAxisSizingMode',
-    'primaryAxisAlignItems',
-    'counterAxisAlignItems',
-    'rectangleCornerRadii',
-    'itemSpacing',
-    'paddingLeft',
-    'paddingRight',
-    'paddingTop',
-    'paddingBottom',
+    "id",
+    "name",
+    "type",
+    "visible",
+    "opacity",
+    "blendMode",
+    "layoutVersion",
+    "children",
+    "x",
+    "y",
+    "width",
+    "height",
+    "minWidth",
+    "minHeight",
+    "maxHeight",
+    "maxWidth",
+    "rotation",
+    "constraints",
+    "absoluteBoundingBox",
+    "absoluteRenderBounds",
+    "fills",
+    "strokes",
+    "strokeWeight",
+    "strokeAlign",
+    "effects",
+    "cornerRadius",
+    "layoutMode",
+    "primaryAxisSizingMode",
+    "counterAxisSizingMode",
+    "primaryAxisAlignItems",
+    "counterAxisAlignItems",
+    "rectangleCornerRadii",
+    "itemSpacing",
+    "paddingLeft",
+    "paddingRight",
+    "paddingTop",
+    "paddingBottom",
 
     // Component/Instance specific properties
-    'componentPropertyDefinitions',
-    'componentPropertyReferences',
-    'componentProperties',          
-    'mainComponentId',
+    "componentPropertyDefinitions",
+    "componentPropertyReferences",
+    "componentProperties",
+    "mainComponentId",
 
     // Variable bindings
-    'boundVariables',
+    "boundVariables",
 
     // TextNode specific properties
-    'characters',      
-    'fontSize',       
-    'fontWeight',
-    'fontName',
-    'lineHeight',
-    'letterSpacing',
-    'textCase',
-    'textDecoration',
-    'textStyleID',
-    'fillStyleId',
+    "characters",
+    "fontSize",
+    "fontWeight",
+    "fontName",
+    "lineHeight",
+    "letterSpacing",
+    "textCase",
+    "textDecoration",
+    "textStyleID",
+    "fillStyleId",
   ];
 
   // Create a plain object to hold the serialized data
   const obj: Record<string, any> = {};
 
-  propertiesToExtract.forEach(prop => {
+  propertiesToExtract.forEach((prop) => {
     if (prop in node) {
       try {
-
-        if (prop === 'componentPropertyDefinitions' && node.type !== 'COMPONENT_SET') {
+        if (
+          prop === "componentPropertyDefinitions" &&
+          node.type !== "COMPONENT_SET"
+        ) {
           return;
         }
-        
+
         obj[prop] = (node as any)[prop];
-        
+
         if (obj[prop] === figma.mixed) {
-           if (prop === 'cornerRadius') {
-             obj[prop] = {
-                 mixed: true,
-                 topLeft: (node as any).topLeftRadius,
-                 topRight: (node as any).topRightRadius,
-                 bottomRight: (node as any).bottomRightRadius,
-                 bottomLeft: (node as any).bottomLeftRadius
-             };
-           } else {
-             obj[prop] = 'figma.mixed'; 
-           }
+          if (prop === "cornerRadius") {
+            obj[prop] = {
+              mixed: true,
+              topLeft: (node as any).topLeftRadius,
+              topRight: (node as any).topRightRadius,
+              bottomRight: (node as any).bottomRightRadius,
+              bottomLeft: (node as any).bottomLeftRadius,
+            };
+          } else {
+            obj[prop] = "figma.mixed";
+          }
         }
       } catch (e) {
         console.warn(`Failed to read property ${prop} on node ${node.name}`);
@@ -234,15 +240,16 @@ function serializeFigmaNode(node: SceneNode): any {
   });
 
   // 3. Check for children and recursively serialize them
-  if ('children' in node) {
-    obj.children = node.children.map((child: SceneNode) => serializeFigmaNode(child));
+  if ("children" in node) {
+    obj.children = node.children.map((child: SceneNode) =>
+      serializeFigmaNode(child)
+    );
   }
 
   return obj;
 }
 
 figma.ui.onmessage = async (msg) => {
-
   switch (msg.type) {
     case "tokens-update": {
       console.log("🔄 [PLUGIN] Collecting tokens...");
@@ -259,18 +266,14 @@ figma.ui.onmessage = async (msg) => {
     case "components-generate": {
       const selected = figma.currentPage.selection;
       const result = serializeFigmaNode(selected[0]);
-      console.log('Selected', selected[0]);
+      console.log("Selected", selected[0]);
 
       console.log("🔄 [PLUGIN] Generating components for selection:", selected);
       if (!selected.length)
-        return figma.notify(
-          "🛑 Please select at least one ComponentSet"
-        );
-        
-        if (selected[0].type !== "COMPONENT_SET")
-          return figma.notify(
-            "🛑 Please select only ComponentSet"
-          );
+        return figma.notify("🛑 Please select at least one ComponentSet");
+
+      if (selected[0].type !== "COMPONENT_SET")
+        return figma.notify("🛑 Please select only ComponentSet");
 
       const data = await getAllTokens();
       figma.ui.postMessage({
@@ -282,7 +285,7 @@ figma.ui.onmessage = async (msg) => {
           ...data,
         },
       });
-      console.log('component', result);
+      console.log("component", result);
       break;
     }
 

@@ -119,79 +119,84 @@ async function getAllTokens() {
 function serializeFigmaNode(node) {
     // Properties to extract from each node
     const propertiesToExtract = [
-        'id',
-        'name',
-        'type',
-        'visible',
-        'opacity',
-        'blendMode',
-        'layoutVersion',
-        'children',
-        'x',
-        'y',
-        'width',
-        'height',
-        'rotation',
-        'constraints',
-        'absoluteBoundingBox',
-        'absoluteRenderBounds',
-        'fills',
-        'strokes',
-        'strokeWeight',
-        'strokeAlign',
-        'effects',
-        'cornerRadius',
-        'layoutMode',
-        'primaryAxisSizingMode',
-        'counterAxisSizingMode',
-        'primaryAxisAlignItems',
-        'counterAxisAlignItems',
-        'rectangleCornerRadii',
-        'itemSpacing',
-        'paddingLeft',
-        'paddingRight',
-        'paddingTop',
-        'paddingBottom',
+        "id",
+        "name",
+        "type",
+        "visible",
+        "opacity",
+        "blendMode",
+        "layoutVersion",
+        "children",
+        "x",
+        "y",
+        "width",
+        "height",
+        "minWidth",
+        "minHeight",
+        "maxHeight",
+        "maxWidth",
+        "rotation",
+        "constraints",
+        "absoluteBoundingBox",
+        "absoluteRenderBounds",
+        "fills",
+        "strokes",
+        "strokeWeight",
+        "strokeAlign",
+        "effects",
+        "cornerRadius",
+        "layoutMode",
+        "primaryAxisSizingMode",
+        "counterAxisSizingMode",
+        "primaryAxisAlignItems",
+        "counterAxisAlignItems",
+        "rectangleCornerRadii",
+        "itemSpacing",
+        "paddingLeft",
+        "paddingRight",
+        "paddingTop",
+        "paddingBottom",
         // Component/Instance specific properties
-        'componentPropertyDefinitions',
-        'componentPropertyReferences',
-        'componentProperties',
-        'mainComponentId',
+        "componentPropertyDefinitions",
+        "componentPropertyReferences",
+        "componentProperties",
+        "mainComponentId",
         // Variable bindings
-        'boundVariables',
+        "boundVariables",
         // TextNode specific properties
-        'characters',
-        'fontSize',
-        'fontWeight',
-        'fontName',
-        'lineHeight',
-        'letterSpacing',
-        'textCase',
-        'textDecoration',
-        'textStyleID',
-        'fillStyleId',
+        "characters",
+        "fontSize",
+        "fontWeight",
+        "fontName",
+        "lineHeight",
+        "letterSpacing",
+        "textCase",
+        "textDecoration",
+        "textStyleID",
+        "fillStyleId",
     ];
     // Create a plain object to hold the serialized data
     const obj = {};
-    propertiesToExtract.forEach(prop => {
+    propertiesToExtract.forEach((prop) => {
         if (prop in node) {
             try {
-                if (prop === 'componentPropertyDefinitions' && node.type !== 'COMPONENT_SET') {
+                if (prop === "componentPropertyDefinitions" &&
+                    node.type !== "COMPONENT_SET") {
                     return;
                 }
                 obj[prop] = node[prop];
                 if (obj[prop] === figma.mixed) {
-                    if (prop === 'cornerRadius') {
+                    if (prop === "cornerRadius") {
                         obj[prop] = {
                             mixed: true,
                             topLeft: node.topLeftRadius,
                             topRight: node.topRightRadius,
                             bottomRight: node.bottomRightRadius,
-                            bottomLeft: node.bottomLeftRadius
+                            bottomLeft: node.bottomLeftRadius,
                         };
                     }
                     else {
-                        obj[prop] = 'figma.mixed';
+                        obj[prop] = "figma.mixed";
                     }
                 }
             }
@@ -201,7 +206,7 @@ function serializeFigmaNode(node) {
         }
     });
     // 3. Check for children and recursively serialize them
-    if ('children' in node) {
+    if ("children" in node) {
         obj.children = node.children.map((child) => serializeFigmaNode(child));
     }
     return obj;
@@ -222,7 +227,7 @@ figma.ui.onmessage = async (msg) => {
         case "components-generate": {
             const selected = figma.currentPage.selection;
             const result = serializeFigmaNode(selected[0]);
-            console.log('Selected', selected[0]);
+            console.log("Selected", selected[0]);
             console.log("🔄 [PLUGIN] Generating components for selection:", selected);
             if (!selected.length)
                 return figma.notify("🛑 Please select at least one ComponentSet");
@@ -233,7 +238,7 @@ figma.ui.onmessage = async (msg) => {
                 type: "component-generate",
                 payload: Object.assign({ componentData: selected[0], componentNodeIds: selected.map((n) => n.id), component: result }, data),
             });
-            console.log('component', result);
+            console.log("component", result);
             break;
         }
         case "notify-success":
