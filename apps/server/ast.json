@@ -1,24 +1,25 @@
 {
-  "componentName": "Textarea",
+  "componentName": "Input",
   "props": [],
   "variantStyles": {
     "": {
       "base": {
         "backgroundColor": "var(--fill-neutral-xLow)",
         "border": "1px solid var(--border-neutral-Medium)",
-        "borderRadius": "6px",
+        "borderRadius": "var(--border-radius-Small)",
         "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
         "display": "flex",
-        "flexDirection": "column",
+        "flexDirection": "row",
         "justifyContent": "min",
-        "alignItems": "min",
+        "alignItems": "center",
+        "gap": "12px",
         "layers": [
           {
             "type": "TEXT",
-            "propName": "Placeholder",
-            "defaultValue": "Placeholder",
+            "propName": "value",
+            "defaultValue": "Value",
             "styles": {
-              "color": "var(--text-neutral-Low)",
+              "color": "var(--text-neutral-High)",
               "fontFamily": "var(--text-body-primary-rg-font-family)",
               "fontWeight": "var(--text-body-primary-rg-font-weight)",
               "fontSize": "var(--text-body-primary-rg-font-size)",
@@ -28,22 +29,48 @@
         ]
       },
       "pseudo": {
-        "focus": {
+        "hover": {
           "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--border-neutral-Medium)",
-          "borderRadius": "6px",
+          "border": "1px solid var(--border-neutral-High)",
+          "borderRadius": "var(--border-radius-Small)",
           "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
           "display": "flex",
-          "flexDirection": "column",
+          "flexDirection": "row",
           "justifyContent": "min",
-          "alignItems": "min",
+          "alignItems": "center",
+          "gap": "12px",
           "layers": [
             {
               "type": "TEXT",
               "propName": "Placeholder",
               "defaultValue": "Placeholder",
               "styles": {
-                "color": "var(--text-neutral-Low)",
+                "color": "var(--text-inverted-Low)",
+                "fontFamily": "var(--text-body-primary-rg-font-family)",
+                "fontWeight": "var(--text-body-primary-rg-font-weight)",
+                "fontSize": "var(--text-body-primary-rg-font-size)",
+                "lineHeight": "var(--text-body-primary-rg-line-height)"
+              }
+            }
+          ]
+        },
+        "focus": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--fill-primary-Hight)",
+          "borderRadius": "var(--border-radius-Small)",
+          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "min",
+          "alignItems": "center",
+          "gap": "12px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "value",
+              "defaultValue": "|",
+              "styles": {
+                "color": "var(--text-neutral-High)",
                 "fontFamily": "var(--text-body-primary-rg-font-family)",
                 "fontWeight": "var(--text-body-primary-rg-font-weight)",
                 "fontSize": "var(--text-body-primary-rg-font-size)",
@@ -55,43 +82,20 @@
         "disabled": {
           "backgroundColor": "var(--fill-neutral-Low)",
           "border": "1px solid var(--border-neutral-Medium)",
-          "borderRadius": "6px",
+          "borderRadius": "var(--border-radius-Small)",
           "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
           "display": "flex",
-          "flexDirection": "column",
+          "flexDirection": "row",
           "justifyContent": "min",
-          "alignItems": "min",
+          "alignItems": "center",
+          "gap": "12px",
           "layers": [
             {
               "type": "TEXT",
               "propName": "Placeholder",
               "defaultValue": "Placeholder",
               "styles": {
-                "color": "var(--text-neutral-xLow)",
-                "fontFamily": "var(--text-body-primary-rg-font-family)",
-                "fontWeight": "var(--text-body-primary-rg-font-weight)",
-                "fontSize": "var(--text-body-primary-rg-font-size)",
-                "lineHeight": "var(--text-body-primary-rg-line-height)"
-              }
-            }
-          ]
-        },
-        "hover": {
-          "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--border-neutral-High)",
-          "borderRadius": "6px",
-          "padding": "var(--input-medium-padding-y) var(--input-medium-padding-x)",
-          "display": "flex",
-          "flexDirection": "column",
-          "justifyContent": "min",
-          "alignItems": "min",
-          "layers": [
-            {
-              "type": "TEXT",
-              "propName": "Value",
-              "defaultValue": "Value",
-              "styles": {
-                "color": "var(--text-neutral-High)",
+                "color": "var(--text-inverted-Low)",
                 "fontFamily": "var(--text-body-primary-rg-font-family)",
                 "fontWeight": "var(--text-body-primary-rg-font-weight)",
                 "fontSize": "var(--text-body-primary-rg-font-size)",
@@ -105,7 +109,7 @@
   },
   "allTextPropNames": [
     "Placeholder",
-    "Value"
+    "value"
   ],
   "allBooleanPropNames": []
 }

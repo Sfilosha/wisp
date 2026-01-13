@@ -1,0 +1,81 @@
+.input { 
+      border: none; 
+      text-decoration: none;
+      box-sizing: border-box;
+      background: none;
+      padding: 0;
+      margin: 0;
+      }
+
+
+.input { padding: 8px 12px; border-radius: 8px; width: 100%; font-family: var(--font-primary); }
+
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: center;
+  gap: 12px;
+  padding: var(--input-medium-padding-y) var(--input-medium-padding-x);
+  background-color: var(--fill-neutral-xLow);
+  border: 1px solid var(--border-neutral-Medium);
+  border-radius: var(--border-radius-Small);
+}
+
+
+.input .text-value {
+  color: var(--text-neutral-High);
+  font-family: var(--text-body-primary-rg-font-family);
+  font-weight: var(--text-body-primary-rg-font-weight);
+  font-size: var(--text-body-primary-rg-font-size);
+  line-height: var(--text-body-primary-rg-line-height);
+}
+
+
+.input:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: center;
+  gap: 12px;
+  padding: var(--input-medium-padding-y) var(--input-medium-padding-x);
+  background-color: var(--fill-neutral-xLow);
+  border: 1px solid var(--border-neutral-High);
+  border-radius: var(--border-radius-Small);
+}
+
+
+.input:focus {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: center;
+  gap: 12px;
+  padding: var(--input-medium-padding-y) var(--input-medium-padding-x);
+  background-color: var(--fill-neutral-xLow);
+  border: 1px solid var(--fill-primary-Hight);
+  border-radius: var(--border-radius-Small);
+}
+
+
+.input:focus .text-value {
+  color: var(--text-neutral-High);
+  font-family: var(--text-body-primary-rg-font-family);
+  font-weight: var(--text-body-primary-rg-font-weight);
+  font-size: var(--text-body-primary-rg-font-size);
+  line-height: var(--text-body-primary-rg-line-height);
+}
+
+
+.input:disabled {
+  display: flex;
+  flex-direction: row;
+  justify-content: min;
+  align-items: center;
+  gap: 12px;
+  padding: var(--input-medium-padding-y) var(--input-medium-padding-x);
+  background-color: var(--fill-neutral-Low);
+  border: 1px solid var(--border-neutral-Medium);
+  border-radius: var(--border-radius-Small);
+}
+
