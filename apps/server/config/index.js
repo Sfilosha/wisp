@@ -11,5 +11,5 @@ export default {
   },
   outputDir: "../../packages/design-system/src",
   tokensFilePath: "../../packages/tokens/tokens.css",
-  variablesFilePath: "../../packages/tokens/variables.json",
+  overwriteFiles: true,
 };

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +6,9 @@
     <title>Figma Codegen</title>
     <style>
       body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
         padding: 16px;
         margin: 0;
         background-color: #f5f5f5;
@@ -88,7 +89,6 @@
     <div id="status-generate" class="status"></div>
 
     <script>
-
       // --- Define UI Elements in DOM ---
       const generateButton = document.getElementById("generate");
       const stopButton = document.getElementById("stop");
@@ -117,14 +117,14 @@
         stopButton.style.display = "block";
         parent.postMessage(
           { pluginMessage: { type: "components-generate" } },
-          "*"
+          "*",
         );
       };
 
       stopButton.onclick = () => {
-        fetch("https://localhost:9000/components/cancel", { method: "POST" }).catch(
-          (err) => console.error("Failed to send cancel request:", err)
-        );
+        fetch("https://localhost:9000/components/cancel", {
+          method: "POST",
+        }).catch((err) => console.error("Failed to send cancel request:", err));
         parent.postMessage({ pluginMessage: { type: "notify-cancel" } }, "*");
         resetGenerateUI();
       };
@@ -140,7 +140,7 @@
             body: JSON.stringify(msg.payload),
           })
             .then((res) =>
-              res.ok ? res.json() : Promise.reject("Server error")
+              res.ok ? res.json() : Promise.reject("Server error"),
             )
             .then((data) => {
               // statusTokensDiv.textContent = "✅ Tokens sent to server.";
@@ -151,7 +151,7 @@
                     message: "TokensData sent to server!",
                   },
                 },
-                "*"
+                "*",
               );
             })
             .catch((err) => {
@@ -163,7 +163,7 @@
                     message: "Can't update tokens. Check server.",
                   },
                 },
-                "*"
+                "*",
               );
             })
             .finally(() => {
@@ -181,8 +181,9 @@
             .then((res) => {
               if (!res.ok) {
                 // return Promise.reject("Server responded with an error.")
-                resetGenerateUI()} 
-              return res.json()
+                resetGenerateUI();
+              }
+              return res.json();
             })
             .then((data) => {
               if (data.message.includes("stop")) {
@@ -190,32 +191,34 @@
               } else {
                 // statusGenerateDiv.textContent = "✅ Sent to Server!";
                 parent.postMessage(
-                  { pluginMessage: { 
-                    type: "notify-success", 
-                    message: "ComponentData Sent to Server!" 
-                  } 
-                },
-                  "*"
+                  {
+                    pluginMessage: {
+                      type: "notify-success",
+                      message: "ComponentData Sent to Server!",
+                    },
+                  },
+                  "*",
                 );
               }
             })
             .catch((error) => {
-              if (statusGenerateDiv.textContent !== "Process stopped") {
-                // statusGenerateDiv.textContent = "❌ Error!";
-                console.error("Error:", error);
-                parent.postMessage(
-                  {
-                    pluginMessage: {
-                      type: "notify-error",
-                      message: "Check console",
-                    },
-                  },
-                  "*"
-                );
-              }
+              console.error(`Error: ${error}`);
+              // if (statusGenerateDiv.textContent !== "Process stopped") {
+              // statusGenerateDiv.textContent = "❌ Error!";
+              // console.error("Error:", error);
+              // parent.postMessage(
+              //   {
+              //     pluginMessage: {
+              //       type: "notify-error",
+              //       message: "Check console",
+              //     },
+              //   },
+              //   "*",
+              // );
+              // }
             })
             .finally(() => {
-                resetGenerateUI();
+              resetGenerateUI();
             });
         }
       };

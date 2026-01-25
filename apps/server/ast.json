@@ -1,88 +1,1296 @@
 {
-  "componentName": "Checkbox",
+  "componentName": "Button",
   "props": [
     {
-      "name": "checked",
+      "name": "style",
       "values": [
-        "True",
-        "False"
+        "Link",
+        "Tertiary",
+        "Secondary",
+        "Primary",
+        "Error"
+      ]
+    },
+    {
+      "name": "size",
+      "values": [
+        "small",
+        "large",
+        "medium"
       ]
     }
   ],
   "variantStyles": {
-    "checked=True": {
+    "style=Link, size=small": {
       "base": {
-        "backgroundColor": "var(--fill-primary-Hight)",
-        "border": "1px solid var(--fill-primary-Hight)",
-        "borderRadius": "var(--border-radius-xSmall)",
-        "padding": "0px",
+        "backgroundColor": "transparent",
+        "borderRadius": "var(--button-small-border-radius)",
+        "padding": "var(--button-small-padding-y) 0px",
         "display": "flex",
         "flexDirection": "row",
-        "minWidth": "20px",
-        "minHeight": "20px",
-        "maxWidth": "20px",
-        "maxHeight": "20px",
         "justifyContent": "center",
         "alignItems": "center",
-        "gap": "8px",
-        "layers": []
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-primary-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
       },
       "pseudo": {
         "disabled": {
-          "backgroundColor": "var(--fill-neutral-High)",
-          "border": "1px solid var(--fill-neutral-High)",
-          "borderRadius": "var(--border-radius-xSmall)",
-          "padding": "0px",
+          "backgroundColor": "transparent",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) 0px",
           "display": "flex",
           "flexDirection": "row",
-          "minWidth": "20px",
-          "minHeight": "20px",
-          "maxWidth": "20px",
-          "maxHeight": "20px",
           "justifyContent": "center",
           "alignItems": "center",
-          "gap": "8px",
-          "layers": []
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "transparent",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-primary-Low)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
         }
       }
     },
-    "checked=False": {
+    "style=Tertiary, size=small": {
       "base": {
         "backgroundColor": "var(--fill-neutral-xLow)",
-        "border": "1px solid var(--fill-primary-Hight)",
-        "borderRadius": "var(--border-radius-xSmall)",
-        "padding": "0px",
+        "border": "1px solid var(--fill-neutral-Low)",
+        "borderRadius": "var(--button-small-border-radius)",
+        "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
         "display": "flex",
         "flexDirection": "row",
-        "minWidth": "20px",
-        "minHeight": "20px",
-        "maxWidth": "20px",
-        "maxHeight": "20px",
         "justifyContent": "center",
         "alignItems": "center",
-        "gap": "8px",
-        "layers": []
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-neutral-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
       },
       "pseudo": {
         "disabled": {
-          "backgroundColor": "var(--fill-neutral-xLow)",
-          "border": "1px solid var(--fill-neutral-High)",
-          "borderRadius": "var(--border-radius-xSmall)",
-          "padding": "0px",
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
           "display": "flex",
           "flexDirection": "row",
-          "minWidth": "20px",
-          "minHeight": "20px",
-          "maxWidth": "20px",
-          "maxHeight": "20px",
-          "justifyContent": "min",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--fill-neutral-Medium)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Secondary, size=small": {
+      "base": {
+        "backgroundColor": "var(--fill-secondary-xHight)",
+        "borderRadius": "var(--button-small-border-radius)",
+        "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-secondary-Hight)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Primary, size=small": {
+      "base": {
+        "backgroundColor": "var(--fill-primary-xHight)",
+        "borderRadius": "var(--button-small-border-radius)",
+        "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-primary-Hight)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Error, size=small": {
+      "base": {
+        "backgroundColor": "var(--fill-error-xHight)",
+        "borderRadius": "var(--button-small-border-radius)",
+        "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-error-Hight)",
+          "borderRadius": "var(--button-small-border-radius)",
+          "padding": "var(--button-small-padding-y) var(--button-small-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Primary, size=large": {
+      "base": {
+        "backgroundColor": "var(--fill-primary-xHight)",
+        "borderRadius": "var(--button-medium-border-radius)",
+        "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-primary-Hight)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Link, size=large": {
+      "base": {
+        "backgroundColor": "transparent",
+        "borderRadius": "var(--button-medium-border-radius)",
+        "padding": "var(--button-large-padding-y) 0px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-primary-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "transparent",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "transparent",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-primary-Low)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Tertiary, size=large": {
+      "base": {
+        "backgroundColor": "var(--fill-neutral-xLow)",
+        "border": "1px solid var(--fill-neutral-Low)",
+        "borderRadius": "var(--button-medium-border-radius)",
+        "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-neutral-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--fill-neutral-Medium)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Secondary, size=large": {
+      "base": {
+        "backgroundColor": "var(--fill-secondary-xHight)",
+        "borderRadius": "var(--button-medium-border-radius)",
+        "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-secondary-Hight)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Error, size=large": {
+      "base": {
+        "backgroundColor": "var(--fill-error-xHight)",
+        "borderRadius": "var(--button-medium-border-radius)",
+        "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-error-Hight)",
+          "borderRadius": "var(--button-medium-border-radius)",
+          "padding": "var(--button-large-padding-y) var(--button-large-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Primary, size=medium": {
+      "base": {
+        "backgroundColor": "var(--fill-primary-xHight)",
+        "borderRadius": "var(--button-large-border-radius)",
+        "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "8px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "focus": {
+          "backgroundColor": "var(--fill-primary-xHight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-primary-Hight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Link, size=medium": {
+      "base": {
+        "backgroundColor": "transparent",
+        "borderRadius": "var(--button-large-border-radius)",
+        "padding": "var(--button-medium-padding-y) 0px",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-primary-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "#ffffff",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "focus": {
+          "backgroundColor": "transparent",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-primary-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "transparent",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) 0px",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-primary-Low)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Tertiary, size=medium": {
+      "base": {
+        "backgroundColor": "var(--fill-neutral-xLow)",
+        "border": "1px solid var(--fill-neutral-Low)",
+        "borderRadius": "var(--button-large-border-radius)",
+        "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "10px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-neutral-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "focus": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--fill-primary-Hight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-neutral-xLow)",
+          "border": "1px solid var(--fill-neutral-Medium)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Secondary, size=medium": {
+      "base": {
+        "backgroundColor": "var(--fill-secondary-xHight)",
+        "borderRadius": "var(--button-large-border-radius)",
+        "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "8px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "focus": {
+          "backgroundColor": "var(--fill-secondary-xHight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
           "alignItems": "center",
           "gap": "8px",
-          "layers": []
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-secondary-Hight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "8px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "style=Error, size=medium": {
+      "base": {
+        "backgroundColor": "var(--fill-error-xHight)",
+        "borderRadius": "var(--button-large-border-radius)",
+        "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+        "display": "flex",
+        "flexDirection": "row",
+        "justifyContent": "center",
+        "alignItems": "center",
+        "gap": "8px",
+        "layers": [
+          {
+            "type": "TEXT",
+            "propName": "Value",
+            "defaultValue": "Button",
+            "styles": {
+              "color": "var(--text-inverted-High)",
+              "fontFamily": "var(--text-body-primary-emp-font-family)",
+              "fontWeight": "var(--text-body-primary-emp-font-weight)",
+              "fontSize": "var(--text-body-primary-emp-font-size)",
+              "lineHeight": "var(--text-body-primary-emp-line-height)"
+            }
+          }
+        ]
+      },
+      "pseudo": {
+        "disabled": {
+          "backgroundColor": "var(--fill-neutral-Low)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-neutral-xLow)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "focus": {
+          "backgroundColor": "var(--fill-error-xHight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
+        },
+        "hover": {
+          "backgroundColor": "var(--fill-error-Hight)",
+          "borderRadius": "var(--button-large-border-radius)",
+          "padding": "var(--button-medium-padding-y) var(--button-medium-padding-x)",
+          "display": "flex",
+          "flexDirection": "row",
+          "justifyContent": "center",
+          "alignItems": "center",
+          "gap": "10px",
+          "layers": [
+            {
+              "type": "TEXT",
+              "propName": "Value",
+              "defaultValue": "Button",
+              "styles": {
+                "color": "var(--text-inverted-High)",
+                "fontFamily": "var(--text-body-primary-emp-font-family)",
+                "fontWeight": "var(--text-body-primary-emp-font-weight)",
+                "fontSize": "var(--text-body-primary-emp-font-size)",
+                "lineHeight": "var(--text-body-primary-emp-line-height)"
+              }
+            }
+          ]
         }
       }
     }
   },
-  "allTextPropNames": [],
+  "allTextPropNames": [
+    "Value"
+  ],
   "allBooleanPropNames": []
 }

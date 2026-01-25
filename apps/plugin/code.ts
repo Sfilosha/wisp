@@ -17,7 +17,7 @@ function toUnit(
   {
     unit = "rem",
     base = 16,
-  }: { unit?: "rem" | "%" | "px" | "none"; base?: number } = {}
+  }: { unit?: "rem" | "%" | "px" | "none"; base?: number } = {},
 ): string {
   if (typeof value !== "number" || isNaN(value)) return "";
 
@@ -51,7 +51,7 @@ async function getAllTokens() {
     ids[v.id] = key;
     const value = Object.values(v.valuesByMode)[0] as number;
     if (typeof value === "number") {
-      const isWeight = v.name?.toLowerCase()?.includes("weight");
+      const isWeight = v?.name?.toLowerCase()?.includes("weight");
       tokens.numeric[key] = isWeight ? `${value}` : toUnit(value);
     }
   }
@@ -120,7 +120,7 @@ async function getAllTokens() {
 
     tokens.typography[`${base}-font-family`] = `"${fontName.family}"`;
     tokens.typography[`${base}-font-weight`] = String(
-      fontWeights[fontName.style.toLowerCase().replace(/\s/g, "")] || 400
+      fontWeights[fontName.style.toLowerCase().replace(/\s/g, "")] || 400,
     );
 
     if (typeof fontSize === "number")
@@ -242,7 +242,7 @@ function serializeFigmaNode(node: SceneNode): any {
   // 3. Check for children and recursively serialize them
   if ("children" in node) {
     obj.children = node.children.map((child: SceneNode) =>
-      serializeFigmaNode(child)
+      serializeFigmaNode(child),
     );
   }
 

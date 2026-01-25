@@ -22,6 +22,9 @@ export const Input = (props: IInputProps) => {
   // WRITE YOUR LOGIC BELOW
   
   return (
-    <input className={className} id={id} onChange={onChange} type="text" placeholder={props.placeholder} defaultValue={props.value}></input>
+    <input className={className}  id={id} onChange={onChange} type="text" placeholder={props.placeholder} defaultValue={props.value}>
+      {/* Add children elements here */}
+
+    </input>
   );
 };

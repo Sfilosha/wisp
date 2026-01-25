@@ -5,6 +5,7 @@ import Logger from "../../../helpers/Logger.js";
 import FileService from "../core/FileService.js";
 import { storybookTemplate } from "../codetemplates/storybookTemplate.js";
 import { mapJoin } from "../helpers/mapJoin.js";
+import config from "../config/index.js";
 
 export class StorybookGenerator {
   constructor(ast, componentDir) {
@@ -20,17 +21,17 @@ export class StorybookGenerator {
 
   generate() {
     Logger.info(
-      `[StorybookGenerator] Generating initial Story for ${this.componentName}...`
+      `[StorybookGenerator] Generating initial Story for ${this.componentName}...`,
     );
 
     // Check if already exists. If yes - skip generation
     const filePath = this._getFilePath();
-    // if (fs.existsSync(filePath)) {
-    //   Logger.note(
-    //     `[StorybookGenerator] Skip: ${path.basename(filePath)} exists.`
-    //   );
-    //   return;
-    // }
+    if (!config.overwriteFiles && fs.existsSync(filePath)) {
+      Logger.note(
+        `[StorybookGenerator] Skip: ${path.basename(filePath)} exists.`,
+      );
+      return;
+    }
 
     const storybookCode = storybookTemplate({
       componentName: this.componentName,
@@ -41,7 +42,7 @@ export class StorybookGenerator {
       variantDefaultArgs: this._buildVariantDefaultArgs(this.ast.props),
       textDefaultArgs: this._buildTextDefaultArgs(this.ast.allTextPropNames),
       booleanDefaultArgs: this._buildBooleanDefaultArgs(
-        this.ast.allBooleanPropNames
+        this.ast.allBooleanPropNames,
       ),
     });
 
@@ -54,21 +55,21 @@ export class StorybookGenerator {
     return mapJoin(
       array,
       (p) =>
-        `    ${cleanPropName(p.name)}: { control: 'select', options: ['${p.values.join("', '")}'] },`
+        `    ${cleanPropName(p.name)}: { control: 'select', options: ['${p.values.join("', '")}'] },`,
     );
   }
 
   _buildTextArgTypes(array) {
     return mapJoin(
       array,
-      (p) => `    ${cleanPropName(p)}: { control: 'text' },`
+      (p) => `    ${cleanPropName(p)}: { control: 'text' },`,
     );
   }
 
   _buildBooleanArgTypes(array) {
     return mapJoin(
       array,
-      (p) => `    ${cleanPropName(p)}: { control: 'boolean' },`
+      (p) => `    ${cleanPropName(p)}: { control: 'boolean' },`,
     );
   }
 
@@ -76,7 +77,7 @@ export class StorybookGenerator {
   _buildVariantDefaultArgs(array) {
     return mapJoin(
       array,
-      (p) => `    ${cleanPropName(p.name)}: '${p.values[0]}',`
+      (p) => `    ${cleanPropName(p.name)}: '${p.values[0]}',`,
     );
   }
 

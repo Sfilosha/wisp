@@ -5,6 +5,7 @@ import FileService from "../core/FileService.js";
 import { cleanPropName, categorizeTextProps } from "../helpers/utils.js";
 import { componentTsxTemplate } from "../codetemplates/componentTsxTemplate.js";
 import { renderAstLayer } from "../helpers/renderAstLayer.js";
+import config from "../config/index.js";
 
 export class ComponentLogicGenerator {
   constructor(ast, componentDir) {
@@ -27,12 +28,12 @@ export class ComponentLogicGenerator {
   generate() {
     // Check if already exists. If yes - skip generation
     const filePath = this._getFilePath();
-    // if (fs.existsSync(filePath)) {
-    //   Logger.note(
-    //     `[ComponentLogicGenerator] Skip: ${path.basename(filePath)} exists.`
-    //   );
-    //   return;
-    // }
+    if (!config.overwriteFiles && fs.existsSync(filePath)) {
+      Logger.note(
+        `[ComponentLogicGenerator] Skip: ${path.basename(filePath)} exists.`,
+      );
+      return;
+    }
 
     const tag = this._determineTag();
     const attributes = this._buildAttributes(tag);

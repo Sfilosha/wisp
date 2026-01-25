@@ -8,8 +8,6 @@ import "./App.css";
 function App() {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
-  const checked = true;
-  const disabled = true;
 
   function submitForm(e) {
     e.preventDefault();

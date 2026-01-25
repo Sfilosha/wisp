@@ -40,7 +40,7 @@ async function getAllTokens() {
         ids[v.id] = key;
         const value = Object.values(v.valuesByMode)[0];
         if (typeof value === "number") {
-            const isWeight = (_b = (_a = v.name) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === null || _b === void 0 ? void 0 : _b.includes("weight");
+            const isWeight = (_b = (_a = v === null || v === void 0 ? void 0 : v.name) === null || _a === void 0 ? void 0 : _a.toLowerCase()) === null || _b === void 0 ? void 0 : _b.includes("weight");
             tokens.numeric[key] = isWeight ? `${value}` : toUnit(value);
         }
     }

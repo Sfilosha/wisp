@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "Auto-generated design tokens from Figma",
   "main": "tokens.css",
-  "files": ["tokens.css", "variables.json"],
+  "files": [
+    "tokens.css"
+  ],
   "scripts": {}
 }

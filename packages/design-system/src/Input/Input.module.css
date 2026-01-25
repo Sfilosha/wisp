@@ -23,15 +23,6 @@
 }
 
 
-.input .text-value {
-  color: var(--text-neutral-High);
-  font-family: var(--text-body-primary-rg-font-family);
-  font-weight: var(--text-body-primary-rg-font-weight);
-  font-size: var(--text-body-primary-rg-font-size);
-  line-height: var(--text-body-primary-rg-line-height);
-}
-
-
 .input:hover {
   display: flex;
   flex-direction: row;
