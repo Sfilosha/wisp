@@ -6,7 +6,7 @@ import { generateComponentCss } from "../generators/ComponentCssGenerator.js";
 import { generateStorybook } from "../generators/StorybookGenerator.js";
 import config from "../config/index.js";
 import fs from "fs";
-import { figmaParser } from "../parsers/FigmaParser.js";
+import { astBuilder } from "../parsers/astBuilder.js";
 
 export default class GeneratorService {
   constructor() {
@@ -35,7 +35,7 @@ export default class GeneratorService {
     // fs.writeFileSync('component.json', JSON.stringify(component, null, 2));
 
     Logger.info(`[GeneratorService] Обробка: ${component.name}`);
-    const ast = figmaParser(component, colorTokenMap, variablesMap);
+    const ast = astBuilder(component, colorTokenMap, variablesMap);
 
     // Ast file for debugging
     fs.writeFileSync("ast.json", JSON.stringify(ast, null, 2));

@@ -27,7 +27,7 @@ export class StyleExtractor {
     if (textFill?.type === "SOLID") {
       styles.color = this._getColorValue(
         textFill,
-        textFill.boundVariables?.color
+        textFill.boundVariables?.color,
       );
     } else {
       styles.color = "transparent";
@@ -37,24 +37,24 @@ export class StyleExtractor {
       styles.fontFamily = this._verifyVariableBinding(
         node,
         "fontFamily",
-        node.fontName.family
+        node.fontName.family,
       );
       styles.fontWeight = this._verifyVariableBinding(
         node,
         "fontWeight",
-        node.fontWeight
+        node.fontWeight,
       );
       styles.fontSize = this._verifyVariableBinding(
         node,
         "fontSize",
         node.fontSize,
-        "px"
+        "px",
       );
       styles.lineHeight = this._verifyVariableBinding(
         node,
         "lineHeight",
         node.lineHeight?.value || "auto",
-        "px"
+        "px",
       );
     }
 
@@ -112,7 +112,7 @@ export class StyleExtractor {
       return {
         backgroundColor: this._getColorValue(
           fill,
-          node.fills[0]?.boundVariables?.color
+          node.fills[0]?.boundVariables?.color,
         ),
       };
     }
@@ -124,7 +124,7 @@ export class StyleExtractor {
     if (stroke?.type === "SOLID") {
       const borderColor = this._getColorValue(
         stroke,
-        node.strokes[0]?.boundVariables?.color
+        node.strokes[0]?.boundVariables?.color,
       );
       const borderWidth = node.strokeWeight ? `${node.strokeWeight}px` : "1px";
       return { border: `${borderWidth} solid ${borderColor}` };
@@ -148,25 +148,25 @@ export class StyleExtractor {
         node,
         "topLeftRadius",
         node.cornerRadius,
-        "px"
+        "px",
       );
       tr = this._verifyVariableBinding(
         node,
         "topRightRadius",
         node.cornerRadius,
-        "px"
+        "px",
       );
       br = this._verifyVariableBinding(
         node,
         "bottomRightRadius",
         node.cornerRadius,
-        "px"
+        "px",
       );
       bl = this._verifyVariableBinding(
         node,
         "bottomLeftRadius",
         node.cornerRadius,
-        "px"
+        "px",
       );
     }
 
@@ -182,25 +182,25 @@ export class StyleExtractor {
       node,
       "paddingTop",
       node.paddingTop,
-      "px"
+      "px",
     );
     const right = this._verifyVariableBinding(
       node,
       "paddingRight",
       node.paddingRight,
-      "px"
+      "px",
     );
     const bottom = this._verifyVariableBinding(
       node,
       "paddingBottom",
       node.paddingBottom,
-      "px"
+      "px",
     );
     const left = this._verifyVariableBinding(
       node,
       "paddingLeft",
       node.paddingLeft,
-      "px"
+      "px",
     );
 
     if (top === bottom && left === right) {
